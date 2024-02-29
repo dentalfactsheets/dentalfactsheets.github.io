@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+<title>Home</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="stylesheet" type="text/css" href="factsheets_v2.css">
+
+
+</head>
+<body class="dbody">
+
+<div class="header">
+	<div class="tray">
+		<div class="option">
+			<a href="#"></a>
+			<div>Home</div>
+		</div>
+		<div class="option">
+			<a href="#"></a>
+			<div>Resources</div>
+		</div>
+		<div class="search">
+			<input type="text" placeholder="Start typing to search, for example lignocaine or radiography.">
+			<button type="submit">Go</button>
+		</div>
+		<div class="option2">
+		</div>
+		<div class="option">
+			<a href="home_pt.html"></a>
+			<div style="font-size:80%">Not an oral health professional? Click here for our patient site.</div>
+		</div>
+	</div>
+</div>
+
+<div class="main">
+	
+	
+	
+	<div class="hometext">
+		<span style="font-weight:bold;font-size:150%;">Resources for oral health professionals</span><br/><br/>
+		To view information about dental exposures during pregnancy and breastfeeding, select a category below or use the search option in the top right.<br/>
+		
+		At the moment this site is best viewed on a desktop (landscape) device using Chrome.<br/>
+	</div>
+	
+	<table class="categorymaster">
+		<tr class="categorybroad">
+			<th>Procedures</th>
+			<th>Radiography</th>
+			<th>Anesthesia</th>
+			<th>Analgesia</th>
+			<th>Antibiotics</th>
+		</tr>
+		<tr class="categorynarrow">
+			<td>
+				<ul>
+					<li><a href="#">Periodontic treatment</a></li>
+					<li><a href="#">Restoration</a></li>
+					<li><a href="#">Oral surgery and exodontia</a></li>
+					<li><a href="#">Endodontic treatment</a></li>
+				</ul>
+				<a href="#">View all...</a>
+			</td>
+			<td>
+				<ul>
+					<li><a href="#">Intraoral radiographs</a></li>
+					<li><a href="#">Orthopantogram</a></li>
+					<li><a href="#">Cone beam computed tomography (CBCT)</a></li>
+					<li><a href="#">Lateral cephalogram</a></li>
+				</ul>
+				<a href="#">View all...</a>
+			</td>
+			<td>
+				<ul>
+					<li><a href="#">Local anesthetic (plain)</a></li>
+					<li><a href="#">Local anesthetic (vasoconstrictor)</a></li>
+					<li><a href="#">Topical anesthetics</a></li>
+					<li><a href="#">General anesthesia</a></li>
+				</ul>
+				<a href="#">View all...</a>
+			</td>
+			<td>
+				<ul>
+					<li><a href="#">NSAIDs</a></li>
+					<li><a href="#">Paracetamol</a></li>
+					<li><a href="#">Opioid analgesics</a></li>
+				</ul>
+				<a href="#">View all...</a>
+			</td>
+			<td>
+				<ul>
+					<li><a href="#">Penicillins</a></li>
+					<li><a href="#">Macrolides</a></li>
+					<li><a href="#">Tetracyclines</a></li>
+				</ul>
+				<a href="#">View all...</a>
+			</td>
+			
+		</tr>
+	
+	
+	</table>
+	
+</div>
+
+<div class="footer">
+	<a href="#">About us</a>
+	<br>
+	<a href="#">Contact</a>
+	<br><br>
+	<span>Updated 2024-03-01</span>
+</div>
+
+<script type="text/javascript">
+function slideImgL(dir) {
+	var newDir = parseInt(dir) - 1 < 0 ? 2 : parseInt(dir) - 1;
+	document.getElementById("arrowleft").setAttribute("onClick", "slideImgL(" + newDir + ")");
+	document.getElementById("arrowright").setAttribute("onClick", "slideImgR(" + (newDir + 1) + ")");
+	document.getElementById("arrowleft").style.pointerEvents = "none";
+	document.getElementById("arrowright").style.pointerEvents = "none";
+	document.getElementById("slidecontainer").className = "slidecontainer slideimgl" + parseInt(dir);
+	document.getElementById("slidecontainer").addEventListener("webkitAnimationEnd", releaseArrow);
+}
+function slideImgR(dir) {
+	var newDir = parseInt(dir) + 1 > 3 ? 1 : parseInt(dir) + 1;
+	document.getElementById("arrowright").setAttribute("onClick", "slideImgR(" + newDir + ")");
+	document.getElementById("arrowleft").setAttribute("onClick", "slideImgL(" + (newDir - 1) + ")");
+	document.getElementById("arrowleft").style.pointerEvents = "none";
+	document.getElementById("arrowright").style.pointerEvents = "none";
+	document.getElementById("slidecontainer").className = "slidecontainer slideimgr" + parseInt(dir);
+	document.getElementById("slidecontainer").addEventListener("webkitAnimationEnd", releaseArrow);
+}
+function releaseArrow() {
+	document.getElementById("slidecontainer").removeEventListener("webkitAnimationEnd", releaseArrow);
+	document.getElementById("arrowleft").style.pointerEvents = "auto";
+	document.getElementById("arrowright").style.pointerEvents = "auto";
+}
+</script>
+</body>
+</html>
